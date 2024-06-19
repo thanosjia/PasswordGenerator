@@ -1,4 +1,4 @@
-from tkinter import *
+import tkinter as tk
 from tkinter import messagebox
 import random
 import string
@@ -35,7 +35,7 @@ def generate_pwd():
     password = ''.join(pwd)
 
     passwordLabel.config(text=password)  # Update the password label with the generated password
-    copyButton.config(state=NORMAL)  # Enable the copy button when a password is generated
+    copyButton.config(state=tk.NORMAL)  # Enable the copy button when a password is generated
 
 
 
@@ -45,7 +45,7 @@ def copy_to_clipboard():
     copyLabel.pack()
     root.after(3000, copyLabel.pack_forget)
 
-root = Tk()
+root = tk.Tk()
 
 # Adjust size
 root.geometry("400x400")
@@ -56,19 +56,19 @@ root.minsize(400, 400)
 # set maximum window size value
 root.maxsize(400, 400)
 
-root.title('Password Generator v1.0!')
-welcomeLabel = Label(root, text='Welcome to Password Generator v1.0!')
+root.title('Password Generator v1.0')
+welcomeLabel = tk.Label(root, text='Welcome to Password Generator v1.0!')
 welcomeLabel.pack(pady=20)
 
-passwordLabel = Label(root, text='', font=('Helvetica', 12), fg='green')
+passwordLabel = tk.Label(root, text='', font=('Helvetica', 12), fg='green')
 passwordLabel.pack(pady=20)
 
-copyLabel = Label(root, text='Copied to clipboard!')
+copyLabel = tk.Label(root, text='Copied to clipboard!')
 
-generateButton = Button(root, text='Generate Password', width=25, command=generate_pwd)
+generateButton = tk.Button(root, text='Generate Password', width=25, command=generate_pwd)
 generateButton.pack(pady=20)
 
-copyButton = Button(root, text='Copy to Clipboard', width=25, state=DISABLED, command=copy_to_clipboard)
+copyButton = tk.Button(root, text='Copy to Clipboard', width=25, state=tk.DISABLED, command=copy_to_clipboard)
 copyButton.pack(pady=10)
 
 root.mainloop()
