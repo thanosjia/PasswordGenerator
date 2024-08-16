@@ -8,4 +8,5 @@ The length of the generated passwords is randomized from 12 to 20 characters.
 
 
 INSTRUCTIONS
+
 Usage is straightforward, click Generate Password to generate a password. Click Copy to clipboard to copy the password for you to store somewhere.
